@@ -1,19 +1,38 @@
 html{
-    font-size:14px;
+    font-size: 14px;
 }
 body{
-    background: #8dc63f;
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background: #8dc63f;
 }
+.clr::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
 .basic{
-    background: white;
     margin: 0 auto;
     padding: 0 15px;
     max-width: 960px;
+    background: white;
+    box-sizing: border-box;
 }
 .header{
     padding: 25px 0;
+}
+.logo-content{
+    width: 55%;
+}
+.logo{
+    margin-right: 35px;
 }
 .logo p{
     margin: 0;
@@ -29,11 +48,10 @@ body{
     font-size: 14px;
 }
 .ball{
-    margin-left: 35px;
     transition: all 1s ease; 
 }
 .ball:hover{
-    margin-left: 250px;
+    margin-left: 15%;
 }
 .phones a {
     text-decoration: none;
@@ -51,46 +69,53 @@ section h1{
 .i{
     color: #5a5a5a;
 }
+.text-tell{
+    text-align: right;
+}
 .banner{
     width: 100%;
- }
+}
 .main{
     margin-bottom: 45px;
+}
+section{
+    max-width: 60%;
 }
 section h1{
     font-size: 24px;
 }
-section{
-    max-width: 559px;
-}
 section p{
     line-height: 1.5em;
 }
-nav a{
-    text-transform:uppercase;
-    color: #39930d;
+aside{
+    width: 300px;
 }
 nav p{
+    padding: 10px 20px;
     font-size: 18px;
-    padding:10px;
-    width: 300px;
-    padding-left: 20px;
-}
-nav li{
-    list-style: none;
-    margin: 10px 0;
 }
 nav ul{
     padding-left: 20px;
     list-style: none;
 }
-nav a:hover{
+nav li{
+    padding: 8px 0;
+    transition: all 1s ease;
+}
+nav a{
+    display: block;
+    text-transform: uppercase;
+    color: #39930d;
+    transition: all 1s ease;
+}
+nav li:hover{
+    background: #003f0c;
+    padding: 8px 10px;
+}
+nav li:hover a{
     color: white;
     font-weight: bold;
-    background: #003f0c;
-    display: block;
     text-decoration: none;
-    padding: 7px;
 }
 .footer,
 nav p{
@@ -98,20 +123,73 @@ nav p{
 }
 .footer,
 nav p{
-    color:white;
+    color: white;
 }
 .footer{
-    padding:10px;
-    margin:0 -15px;
+    padding: 10px 15px;
+    margin: 0 -15px;
 }
-.clr::after{
-    content: "";
-    display: block;
-    clear: both;
+
+
+
+@media screen and (max-width: 800px){
+    aside,
+    .main-content{
+        width: 100%;
+        max-width: 100%;
+    } 
+    .logo-content{
+        width: 65%;
+    }
+    .ball:hover{
+        margin: 0; 
+        transform: rotate(360deg);
+    }
 }
-.left{
-    float:left;
+@media screen and (max-width: 630px){
+    .logo-content,
+    .phones{
+        margin: 0 auto;
+        float: none;
+    }
+    .logo-content{
+        display: block;
+        width: 70%;
+        margin-bottom: 50px;
+    }
+    .text-tell{
+        text-align: center;
+    }
+    .banner{
+        height: 300px;
+        object-fit: cover;
+        object-position: 75%;
+    }
 }
-.right{
-    float:right;
+@media screen and (max-width: 560px){
+    .header{
+        text-align: center;
+    }
+    .logo-content{
+        display: block;
+        margin-bottom: 0;
+    }
+    .logo{
+        margin-bottom: 25px;
+    }
+    .ball{
+        margin-bottom: 50px;
+    }
+    .logo,
+    .phones{
+        float: none;
+    }
+    .text-tell{
+        text-align: center;
+    }
+    .banner{
+        height: 300px;
+        object-fit: cover;
+        object-position: 75%;
+    }
 }
